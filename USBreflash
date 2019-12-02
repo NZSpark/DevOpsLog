@@ -1,0 +1,27 @@
+1. USB Check
+ChipGenius_v4_00_0030
+　设备描述: [D:]USB 大容量存储设备(Generic Flash Disk)
+　设备类型:　　大容量存储设备
+
+　协议版本: USB 2.00
+　当前速度: 高速(HighSpeed)
+　电力消耗: 200mA
+
+ USB设备ID: VID = 058F PID = 6387
+设备序列号: F460E149
+
+设备供应商: Generic
+　设备名称: Mass Storage
+设备修订版: 0112
+
+产品制造商: Generic
+　产品型号: Flash Disk
+产品修订版: 8.07
+
+　主控厂商: Alcor Micro(安国)
+　主控型号: SC908SN/AU6989SN - F/W D82B
+闪存识别码:　　983AA892 - Toshiba(东芝) TC58TVG7T2JTA00 - 1CE/单通道 [TLC-8K] -> 总容量 = 16GB
+
+2. Get Right USB flash burning tool.
+AlcorMP_D3eD3_v13.11.05.00.rar
+http://www.usbdev.ru/files/alcor/alcormpmd/

@@ -1,0 +1,49 @@
+1. clone git
+VS 2019 -> Team Explorer -> Local Git Repositories -> Clone 
+https://github.com/bitcoin/bitcoin.git
+D:\Program\Github\bitcoin
+
+2. build.
+
+D:\Program\Github\bitcoin\build_msvc\README.md
+(1) install vcpkg
+https://docs.microsoft.com/en-us/cpp/build/vcpkg?view=vs-2019
+https://github.com/Microsoft/vcpkg
+cd D:\Program\Github\vcpkg
+bootstrap-vcpkg.bat
+vcpkg install --triplet x64-windows-static boost-filesystem boost-multi-index boost-signals2 boost-test boost-thread libevent zeromq berkeleydb rapidcheck double-conversion
+vcpkg integrate install
+
+(2) create solution file
+py -3 build_msvc\msvc-autogen.py
+
+(3) open solution file
+D:\Program\Github\bitcoin\build_msvc\bitcoin.sln
+Debug-> x64 -> build solution
+
+(4) Add include files:
+Solution Explorer -> Properties -> Common Properties -> Debug source files -> 
+D:\Program\Github\vcpkg\installed\x64-windows-static\include
+
+(5) Error
+*  warning C4834: discarding return value of function with 'nodiscard' attribute
+Properties -> C/C++ -> General -> Treat Warning As Errors -> No /WX-
+
+* Error	C3861	'evthread_use_windows_threads': identifier not found	libbitcoin_server	D:\Program\Github\bitcoin\src\httpserver.cpp	373	
+--> D:\Program\Github\vcpkg-custom-ports\ports\libevent\portfile.cmake --> comment out "thread  EVENT__DISABLE_THREAD_SUPPORT"
+--> vcpkg install --triplet x64-windows-static --overlay-ports=..\vcpkg-custom-ports\ports berkeleydb boost-filesystem boost-multi-index boost-signals2 boost-test boost-thread libevent rapidcheck zeromq double-conversion
+
+
+* Error	MSB3073	The command "C:\Qt5.9.8_x64_static_vs2019\bin\moc.exe  "..\..\src\qt\bitcoinamountfield.cpp" -o .\QtGeneratedFiles\qt\bitcoinamountfield.moc" exited with code 3.	libbitcoin_qt	D:\Program\Github\bitcoin\build_msvc\libbitcoin_qt\libbitcoin_qt.vcxproj	162
+download Qt:https://github.com/sipsorcery/qt_win_binary/releases/download/v1.4/Qt5.9.8_x64_static_vs2019.zip and unzip to D:\	
+--> D:\Program\Github\bitcoin\build_msvc\common.qt.init.vcxproj
+ <QtBaseDir>C:\Qt5.9.8_x64_static_vs2019</QtBaseDir> ->  <QtBaseDir>D:\Qt5.9.8_x64_static_vs2019</QtBaseDir>
+--> py -3 build_msvc\msvc-autogen.py
+
+3. Execute client
+(1) copy data block
+D:\Bitcoin-data
+
+(2) launch "bitcoin-qt"
+select "D:\Bitcoin-data" as data directory.
+

@@ -8,8 +8,11 @@ Use USB to -> Transfer files
 Install Chat_Partner -> Detect Device -> Repair Now ->  Activate -> uninstall previous versions of google service -> uninistall 
 -> regist your devices -> sign in -> complete
 
+https://www.google.com/android/uncertified/
+
 
 chat_partner_full_0207.apk
 https://drive.google.com/file/d/1sz6U88vkIh8inoIC6TqUsiciaSqj4GqG/view
 
-
+Device ID.apk
+https://www.apkmirror.com/apk/evozi/device-id/

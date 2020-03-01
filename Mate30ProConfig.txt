@@ -1,0 +1,15 @@
+
+reboot recovery
+factory reset
+
+
+About Phone -> Build Number, click 6 times -> Developer optiones.
+Use USB to -> Transfer files
+Install Chat_Partner -> Detect Device -> Repair Now ->  Activate -> uninstall previous versions of google service -> uninistall 
+-> regist your devices -> sign in -> complete
+
+
+chat_partner_full_0207.apk
+https://drive.google.com/file/d/1sz6U88vkIh8inoIC6TqUsiciaSqj4GqG/view
+
+
